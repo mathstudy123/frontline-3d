@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Frontline 3D — Prototype</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="menu" class="overlay">
+    <div class="panel">
+      <p class="eyebrow">THREE-DIMENSIONAL ARCADE FPS</p>
+      <h1>FRONTLINE <span>3D</span></h1>
+      <p class="sub">Choose a theatre and role, then enter the training zone.</p>
+      <label for="mapChoice">MAP / THEATRE</label>
+      <select id="mapChoice">
+        <option value="ukraine">Eastern Europe — Ukraine-inspired</option>
+        <option value="east">WWII — Eastern Front</option>
+        <option value="dday">WWII — Normandy landing zone</option>
+        <option value="ww1">WWI — Western Front, France</option>
+      </select>
+      <label for="classChoice">CLASS</label>
+      <select id="classChoice">
+        <option value="assault">Assault — balanced</option>
+        <option value="gunner">Machine Gunner — slower, high-capacity</option>
+        <option value="recon">Recon — quick, precise arcade shots</option>
+        <option value="support">Support — extra armour, steady shots</option>
+      </select>
+      <button id="startBtn">DEPLOY</button>
+      <p class="small">Stylized, non-graphic arcade combat. No real weapon handling simulation.</p>
+    </div>
+  </div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div><b id="mapName">THEATRE</b><span id="className">ASSAULT</span></div>
+      <div class="stats"><span>HEALTH <b id="health">100</b></span><span>POINTS <b id="score">0</b></span></div>
+    </div>
+    <div id="crosshair">+</div>
+    <div class="hud-bottom">
+      <span id="weaponName">ARC RIFLE</span>
+      <span>WASD MOVE · MOUSE LOOK · CLICK FIRE · SHIFT SPRINT · ESC RELEASE</span>
+    </div>
+    <div id="message">Click to lock mouse</div>
+  </div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
